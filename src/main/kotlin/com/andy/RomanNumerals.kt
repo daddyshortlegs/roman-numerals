@@ -32,11 +32,7 @@ class RomanNumerals {
             return "$romanNumeralForUnits".repeat(i / units)
         }
 
-        if (i == midPoint) {
-            return "${convertBaseSymbols(midPoint)}"
-        }
-
-        if (i > midPoint && i < (units * 10) - units) {
+        if (i >= midPoint && i < (units * 10) - units) {
             return convertBaseSymbols(midPoint) + "$romanNumeralForUnits".repeat(i / units - midPoint / units)
         }
 
