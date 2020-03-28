@@ -7,6 +7,9 @@ class RomanNumerals {
             return baseSymbol
         }
 
+        if (i == 5 - 1) {
+            return "IV"
+        }
         if (i < 5) {
             return "I".repeat(i)
         }

@@ -24,7 +24,14 @@ class RomanNumeralsTest {
     }
 
     @Test
+    fun `should convert one less than 5`() {
+        assertEquals("IV", romanNumerals.convert(4))
+    }
+
+    @Test
     fun `should convert single integers greater than 5`() {
         assertEquals("VI", romanNumerals.convert(6))
+        assertEquals("VII", romanNumerals.convert(7))
+        assertEquals("VIII", romanNumerals.convert(8))
     }
 }
