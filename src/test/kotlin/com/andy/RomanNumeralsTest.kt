@@ -26,6 +26,5 @@ class RomanNumeralsTest {
     @Test
     fun `should convert single integers greater than 5`() {
         assertEquals("VI", romanNumerals.convert(6))
-
     }
 }
