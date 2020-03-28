@@ -7,21 +7,23 @@ class RomanNumerals {
             return baseSymbol
         }
 
-        if (i == 5 - 1) {
-            return "IV"
-        }
+        // Units of 1
+        if (i / 1 < 10) {
+            if (i == 5 - 1) {
+                return "IV"
+            }
 
-        if (i < 5) {
-            return "I".repeat(i)
-        }
+            if (i < 5) {
+                return "I".repeat(i)
+            }
 
+            if (i > 5 && i < 10 - 1) {
+                return "V" + "I".repeat(i - 5)
+            }
 
-        if (i > 5 && i < 10 - 1) {
-            return "V" + "I".repeat(i - 5)
-        }
-
-        if (i == 10 - 1) {
-            return "IX"
+            if (i == 10 - 1) {
+                return "IX"
+            }
         }
 
         // Units of 10
@@ -44,7 +46,7 @@ class RomanNumerals {
         }
 
         // units of 100
-        if (i / 100 < 100) {
+        if (i / 100 < 10) {
             if (i == 500 - 100) {
                 return "CD"
             }
@@ -63,7 +65,7 @@ class RomanNumerals {
         }
 
         // units of 1000
-        if (i / 1000 < 1000) {
+        if (i / 1000 < 10) {
             return "M".repeat(i / 1000)
         }
 
