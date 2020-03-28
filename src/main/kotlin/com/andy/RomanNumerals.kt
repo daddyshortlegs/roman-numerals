@@ -33,7 +33,7 @@ class RomanNumerals {
     private fun convertUnitsOf1(i: Int): String {
         val units = 1
         val midPoint = 5 * units
-        val romanNumeralForUnits = "I"
+        val romanNumeralForUnits = convertBaseSymbols(units)
         if (i == midPoint - units) {
             return "${romanNumeralForUnits}V"
         }
@@ -52,7 +52,7 @@ class RomanNumerals {
     private fun convertUnitsOf10(i: Int): String {
         val units = 10
         val midPoint = 5 * units
-        val romanNumeralForUnits = "X"
+        val romanNumeralForUnits = convertBaseSymbols(units)
         if (i == midPoint - units) {
             return "${romanNumeralForUnits}L"
         }
@@ -71,30 +71,32 @@ class RomanNumerals {
     private fun convertUnitsOf100(i: Int): String {
         val units = 100
         val midPoint = 5 * units
-        val romanNumberalForUnits = "C"
+        val romanNumeralForUnits = convertBaseSymbols(units)
         if (i == midPoint - units) {
-            return "${romanNumberalForUnits}D"
+            return "${romanNumeralForUnits}D"
         }
 
         if (i < midPoint) {
-            return "$romanNumberalForUnits".repeat(i / units)
+            return "$romanNumeralForUnits".repeat(i / units)
         }
 
         if (i > midPoint && i < 1000 - units) {
-            return "D" + "$romanNumberalForUnits".repeat(i / units - midPoint / units)
+            return "D" + "$romanNumeralForUnits".repeat(i / units - midPoint / units)
         }
 
-        return "${romanNumberalForUnits}M"
+        return "${romanNumeralForUnits}M"
     }
 
     private fun convertUnitsOf1000(i: Int): String {
         val units = 1000
-        val romanNumeralForUnits = "M"
-        return romanNumeralForUnits.repeat(i / units)
+        val romanNumeralForUnits = convertBaseSymbols(units)
+        return "$romanNumeralForUnits".repeat(i / units)
     }
 
     private fun convertBaseSymbols(i: Int): String? {
-        if (i == 5) {
+        if (i == 1) {
+            return "I"
+        } else if (i == 5) {
             return "V"
         } else if (i == 10) {
             return "X"
