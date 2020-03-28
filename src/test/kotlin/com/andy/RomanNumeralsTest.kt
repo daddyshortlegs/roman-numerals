@@ -18,8 +18,14 @@ class RomanNumeralsTest {
     }
 
     @Test
-    fun `should convert multiple symbols of same type`() {
+    fun `should convert single integers less than 5`() {
         assertEquals("II", romanNumerals.convert(2))
         assertEquals("III", romanNumerals.convert(3))
+    }
+
+    @Test
+    fun `should convert single integers greater than 5`() {
+        assertEquals("VI", romanNumerals.convert(6))
+
     }
 }

@@ -2,6 +2,7 @@ package com.andy
 
 class RomanNumerals {
     fun convert(i: Int): String {
+        var baseSymbol = ""
         if (i == 5) {
             return "V"
         } else if (i == 10) {
@@ -19,7 +20,11 @@ class RomanNumerals {
         if (i < 5) {
             return "I".repeat(i)
         }
-        return "I"
+
+        if (i > 5) {
+            return "V" + "I".repeat(i - 5)
+        }
+        return baseSymbol
     }
 
 
