@@ -2,24 +2,20 @@ package com.andy
 
 class RomanNumerals {
     fun convert(i: Int): String {
-        // Units of 1
-        if (i / 1 < 10) {
-            return convertUnitsOf(1, i)
+        if (i / 1000 in 1..9) {
+            return convertUnitsOf(1000, i)
         }
 
-        // Units of 10
-        if (i / 10 < 10) {
-            return convertUnitsOf(10, i)
-        }
-
-        // units of 100
-        if (i / 100 < 10) {
+        if (i / 100 in 1..9) {
             return convertUnitsOf(100, i)
         }
 
-        // units of 1000
-        if (i / 1000 < 10) {
-            return convertUnitsOf(1000, i)
+        if (i / 10 in 1..9) {
+            return convertUnitsOf(10, i)
+        }
+
+        if (i / 1 in 1..9) {
+            return convertUnitsOf(1, i)
         }
 
         return ""
