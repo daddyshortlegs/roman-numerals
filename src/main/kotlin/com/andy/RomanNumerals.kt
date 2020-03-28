@@ -31,10 +31,7 @@ class RomanNumerals {
     }
 
     private fun convertUnitsOf(units: Int, i: Int): String {
-        return convertUnits(units, i, 5 * units)
-    }
-
-    private fun convertUnits(units: Int, i: Int, midPoint: Int): String {
+        val midPoint = 5 * units
         val romanNumeralForUnits = convertBaseSymbols(units)
         if (i == midPoint - units) {
             return "${romanNumeralForUnits}${convertBaseSymbols(midPoint)}"
