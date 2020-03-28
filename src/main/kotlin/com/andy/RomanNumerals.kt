@@ -15,6 +15,10 @@ class RomanNumerals {
         } else if (i == 1000) {
             return "M"
         }
+
+        if (i < 5) {
+            return "I".repeat(i)
+        }
         return "I"
     }
 
