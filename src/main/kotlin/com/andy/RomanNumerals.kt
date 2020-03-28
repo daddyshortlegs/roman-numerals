@@ -9,12 +9,12 @@ class RomanNumerals {
 
         // Units of 1
         if (i / 1 < 10) {
-            return convertUnitsOfOne(i)
+            return convertUnitsOf1(i)
         }
 
         // Units of 10
         if (i / 10 < 10) {
-            return convertUnitsOfTen(i)
+            return convertUnitsOf10(i)
         }
 
         // units of 100
@@ -30,8 +30,36 @@ class RomanNumerals {
         return ""
     }
 
-    private fun convertUnitsOf1000(i: Int): String {
-        return "M".repeat(i / 1000)
+    private fun convertUnitsOf1(i: Int): String {
+        if (i == 5 - 1) {
+            return "IV"
+        }
+
+        if (i < 5) {
+            return "I".repeat(i)
+        }
+
+        if (i > 5 && i < 10 - 1) {
+            return "V" + "I".repeat(i - 5)
+        }
+
+        return "IX"
+    }
+
+    private fun convertUnitsOf10(i: Int): String {
+        if (i == 50 - 10) {
+            return "XL"
+        }
+
+        if (i < 50) {
+            return "X".repeat(i / 10)
+        }
+
+        if (i > 50 && i < 100 - 10) {
+            return "L" + "X".repeat(i / 10 - 50 / 10)
+        }
+
+        return "XC"
     }
 
     private fun convertUnitsOf100(i: Int): String {
@@ -50,36 +78,8 @@ class RomanNumerals {
         return "CM"
     }
 
-    private fun convertUnitsOfTen(i: Int): String {
-        if (i == 50 - 10) {
-            return "XL"
-        }
-
-        if (i < 50) {
-            return "X".repeat(i / 10)
-        }
-
-        if (i > 50 && i < 100 - 10) {
-            return "L" + "X".repeat(i / 10 - 50 / 10)
-        }
-
-        return "XC"
-    }
-
-    private fun convertUnitsOfOne(i: Int): String {
-        if (i == 5 - 1) {
-            return "IV"
-        }
-
-        if (i < 5) {
-            return "I".repeat(i)
-        }
-
-        if (i > 5 && i < 10 - 1) {
-            return "V" + "I".repeat(i - 5)
-        }
-
-        return "IX"
+    private fun convertUnitsOf1000(i: Int): String {
+        return "M".repeat(i / 1000)
     }
 
     private fun convertBaseSymbols(i: Int): String? {
