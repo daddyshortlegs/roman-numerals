@@ -10,15 +10,29 @@ class RomanNumerals {
         if (i == 5 - 1) {
             return "IV"
         }
+
         if (i < 5) {
             return "I".repeat(i)
+        }
+
+
+        if (i > 5 && i < 10 - 1) {
+            return "V" + "I".repeat(i - 5)
         }
 
         if (i == 10 - 1) {
             return "IX"
         }
 
-        return "V" + "I".repeat(i - 5)
+        if (i / 10 < 10) {
+            if (i < 50) {
+                return "X".repeat(i / 10)
+            }
+        }
+
+
+
+        return ""
     }
 
     private fun convertBaseSymbols(i: Int): String? {

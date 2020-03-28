@@ -40,4 +40,11 @@ class RomanNumeralsTest {
         assertEquals("IX", romanNumerals.convert(9))
     }
 
+    @Test
+    fun `should convert units of 10`() {
+
+        assertEquals("XX", romanNumerals.convert(20))
+    }
+
+
 }
