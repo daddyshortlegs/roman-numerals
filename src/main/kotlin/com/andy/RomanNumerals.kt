@@ -33,6 +33,10 @@ class RomanNumerals {
             if (i < 50) {
                 return "X".repeat(i / 10)
             }
+
+            if (i > 50 && i < 100 - 10) {
+                return "L" + "X".repeat(i / 10 - 50 / 10)
+            }
         }
 
 
