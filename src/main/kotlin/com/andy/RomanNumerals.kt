@@ -19,7 +19,7 @@ class RomanNumerals {
 
         // units of 1000
         if (i / 1000 < 10) {
-            return convertUnitsOf1000(i)
+            return convertUnitsOf(1000, i)
         }
 
         return ""
@@ -45,12 +45,6 @@ class RomanNumerals {
         }
 
         return "${romanNumeralForUnits}${convertBaseSymbols(units * 10)}"
-    }
-
-    private fun convertUnitsOf1000(i: Int): String {
-        val units = 1000
-        val romanNumeralForUnits = convertBaseSymbols(units)
-        return "$romanNumeralForUnits".repeat(i / units)
     }
 
     private fun convertBaseSymbols(i: Int): String? {
