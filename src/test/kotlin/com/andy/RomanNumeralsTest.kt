@@ -8,8 +8,7 @@ class RomanNumeralsTest {
 
     @Test
     fun `should convert 1`() {
-        val result = romanNumerals.convert(1)
-        assertEquals("I", result)
-
+        assertEquals("I", romanNumerals.convert(1))
+        assertEquals("V", romanNumerals.convert(5))
     }
 }
