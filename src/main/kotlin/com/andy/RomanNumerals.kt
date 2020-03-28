@@ -48,7 +48,14 @@ class RomanNumerals {
             if (i == 500 - 100) {
                 return "CD"
             }
-            return "C".repeat(i / 100)
+
+            if (i < 500) {
+                return "C".repeat(i / 100)
+            }
+
+            if (i > 500 && i < 1000 - 10) {
+                return "D" + "C".repeat(i / 100 - 500 / 100)
+            }
         }
 
 

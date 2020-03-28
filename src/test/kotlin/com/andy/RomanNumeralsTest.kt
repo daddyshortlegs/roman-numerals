@@ -76,4 +76,11 @@ class RomanNumeralsTest {
         assertEquals("CD", romanNumerals.convert(400))
     }
 
+    @Test
+    fun `should convert units of one hundred greater than 50`() {
+        assertEquals("DC", romanNumerals.convert(600))
+        assertEquals("DCC", romanNumerals.convert(700))
+        assertEquals("DCCC", romanNumerals.convert(800))
+    }
+
 }
