@@ -2,11 +2,6 @@ package com.andy
 
 class RomanNumerals {
     fun convert(i: Int): String {
-        var baseSymbol = convertBaseSymbols(i)
-        if (baseSymbol != null) {
-            return baseSymbol
-        }
-
         // Units of 1
         if (i / 1 < 10) {
             return convertUnitsOf(1, i)
@@ -39,6 +34,10 @@ class RomanNumerals {
 
         if (i < midPoint) {
             return "$romanNumeralForUnits".repeat(i / units)
+        }
+
+        if (i == midPoint) {
+            return "${convertBaseSymbols(midPoint)}"
         }
 
         if (i > midPoint && i < (units * 10) - units) {
