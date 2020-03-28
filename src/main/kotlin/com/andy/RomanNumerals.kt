@@ -43,7 +43,7 @@ class RomanNumerals {
         }
 
         if (i > midPoint && i < 10 - units) {
-            return "V" + "$romanNumeralForUnits".repeat(i / units - midPoint / units)
+            return convertBaseSymbols(midPoint) + "$romanNumeralForUnits".repeat(i / units - midPoint / units)
         }
 
         return "${romanNumeralForUnits}X"
@@ -62,7 +62,7 @@ class RomanNumerals {
         }
 
         if (i > midPoint && i < 100 - units) {
-            return "L" + "$romanNumeralForUnits".repeat(i / units - midPoint / units)
+            return convertBaseSymbols(midPoint) + "$romanNumeralForUnits".repeat(i / units - midPoint / units)
         }
 
         return "${romanNumeralForUnits}C"
@@ -81,7 +81,7 @@ class RomanNumerals {
         }
 
         if (i > midPoint && i < 1000 - units) {
-            return "D" + "$romanNumeralForUnits".repeat(i / units - midPoint / units)
+            return convertBaseSymbols(midPoint) + "$romanNumeralForUnits".repeat(i / units - midPoint / units)
         }
 
         return "${romanNumeralForUnits}M"
