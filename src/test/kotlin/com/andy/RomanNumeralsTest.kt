@@ -88,4 +88,11 @@ class RomanNumeralsTest {
         assertEquals("CM", romanNumerals.convert(900))
     }
 
+    @Test
+    fun `should convert a few thoussand`() {
+        assertEquals("M", romanNumerals.convert(1000))
+        assertEquals("MM", romanNumerals.convert(2000))
+
+    }
+
 }

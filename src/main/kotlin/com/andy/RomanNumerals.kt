@@ -62,6 +62,10 @@ class RomanNumerals {
             }
         }
 
+        // units of 1000
+        if (i / 1000 < 1000) {
+            return "M".repeat(i / 1000)
+        }
 
         return ""
     }
