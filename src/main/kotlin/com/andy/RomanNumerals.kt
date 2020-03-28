@@ -45,6 +45,9 @@ class RomanNumerals {
 
         // units of 100
         if (i / 100 < 100) {
+            if (i == 500 - 100) {
+                return "CD"
+            }
             return "C".repeat(i / 100)
         }
 
