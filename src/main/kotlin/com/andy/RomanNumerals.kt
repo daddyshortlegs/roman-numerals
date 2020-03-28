@@ -21,9 +21,7 @@ class RomanNumerals {
                 return "V" + "I".repeat(i - 5)
             }
 
-            if (i == 10 - 1) {
-                return "IX"
-            }
+            return "IX"
         }
 
         // Units of 10
@@ -40,9 +38,7 @@ class RomanNumerals {
                 return "L" + "X".repeat(i / 10 - 50 / 10)
             }
 
-            if ( i == 100 - 10) {
-                return "XC"
-            }
+            return "XC"
         }
 
         // units of 100
@@ -59,9 +55,7 @@ class RomanNumerals {
                 return "D" + "C".repeat(i / 100 - 500 / 100)
             }
 
-            if (i == 1000 - 100) {
-                return "CM"
-            }
+            return "CM"
         }
 
         // units of 1000
