@@ -54,22 +54,14 @@ class RomanNumerals {
     }
 
     private fun convertBaseSymbols(i: Int): String? {
-        if (i == 1) {
-            return "I"
-        } else if (i == 5) {
-            return "V"
-        } else if (i == 10) {
-            return "X"
-        } else if (i == 50) {
-            return "L"
-        } else if (i == 100) {
-            return "C"
-        } else if (i == 500) {
-            return "D"
-        } else if (i == 1000) {
-            return "M"
-        }
-        return null
+        val romanNumerals = mapOf(1 to "I",
+            5 to "V",
+            10 to "X",
+            50 to "L",
+            100 to "C",
+            500 to "D",
+            1000 to "M")
+        return romanNumerals[i]
     }
 
 
