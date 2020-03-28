@@ -24,7 +24,12 @@ class RomanNumerals {
             return "IX"
         }
 
+        // Units of 10
         if (i / 10 < 10) {
+            if (i == 50 - 10) {
+                return "XL"
+            }
+
             if (i < 50) {
                 return "X".repeat(i / 10)
             }

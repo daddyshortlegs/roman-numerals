@@ -42,9 +42,13 @@ class RomanNumeralsTest {
 
     @Test
     fun `should convert units of 10`() {
-
         assertEquals("XX", romanNumerals.convert(20))
+        assertEquals("XXX", romanNumerals.convert(30))
     }
 
+    @Test
+    fun `should convert ten less than 50`() {
+        assertEquals("XL", romanNumerals.convert(40))
+    }
 
 }
