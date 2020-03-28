@@ -53,8 +53,12 @@ class RomanNumerals {
                 return "C".repeat(i / 100)
             }
 
-            if (i > 500 && i < 1000 - 10) {
+            if (i > 500 && i < 1000 - 100) {
                 return "D" + "C".repeat(i / 100 - 500 / 100)
+            }
+
+            if (i == 1000 - 100) {
+                return "CM"
             }
         }
 
