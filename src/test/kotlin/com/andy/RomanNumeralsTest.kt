@@ -63,4 +63,12 @@ class RomanNumeralsTest {
         assertEquals("XC", romanNumerals.convert(90))
     }
 
+
+    @Test
+    fun `should convert units of 100`() {
+        assertEquals("C", romanNumerals.convert(100))
+        assertEquals("CC", romanNumerals.convert(200))
+        assertEquals("CCC", romanNumerals.convert(300))
+    }
+
 }

@@ -43,6 +43,10 @@ class RomanNumerals {
             }
         }
 
+        // units of 100
+        if (i / 100 < 100) {
+            return "C".repeat(i / 100)
+        }
 
 
         return ""
