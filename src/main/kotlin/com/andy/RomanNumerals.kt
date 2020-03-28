@@ -14,6 +14,10 @@ class RomanNumerals {
             return "I".repeat(i)
         }
 
+        if (i == 10 - 1) {
+            return "IX"
+        }
+
         return "V" + "I".repeat(i - 5)
     }
 

@@ -34,4 +34,10 @@ class RomanNumeralsTest {
         assertEquals("VII", romanNumerals.convert(7))
         assertEquals("VIII", romanNumerals.convert(8))
     }
+
+    @Test
+    fun `should convert one less than 10`() {
+        assertEquals("IX", romanNumerals.convert(9))
+    }
+
 }
