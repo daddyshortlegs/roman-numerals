@@ -31,62 +31,66 @@ class RomanNumerals {
     }
 
     private fun convertUnitsOf1(i: Int): String {
-        val unitsOf1 = 1
-        val by5 = 5 * unitsOf1
-        if (i == by5 - unitsOf1) {
-            return "IV"
+        val units = 1
+        val midPoint = 5 * units
+        val romanNumeralForUnits = "I"
+        if (i == midPoint - units) {
+            return "${romanNumeralForUnits}V"
         }
 
-        if (i < by5) {
-            return "I".repeat(i / unitsOf1)
+        if (i < midPoint) {
+            return "$romanNumeralForUnits".repeat(i / units)
         }
 
-        if (i > by5 && i < 10 - unitsOf1) {
-            return "V" + "I".repeat(i / unitsOf1 - by5 / unitsOf1)
+        if (i > midPoint && i < 10 - units) {
+            return "V" + "$romanNumeralForUnits".repeat(i / units - midPoint / units)
         }
 
-        return "IX"
+        return "${romanNumeralForUnits}X"
     }
 
     private fun convertUnitsOf10(i: Int): String {
-        val unitsOf10 = 10
-        val by50 = 5 * unitsOf10
-        if (i == by50 - unitsOf10) {
-            return "XL"
+        val units = 10
+        val midPoint = 5 * units
+        val romanNumeralForUnits = "X"
+        if (i == midPoint - units) {
+            return "${romanNumeralForUnits}L"
         }
 
-        if (i < by50) {
-            return "X".repeat(i / unitsOf10)
+        if (i < midPoint) {
+            return "$romanNumeralForUnits".repeat(i / units)
         }
 
-        if (i > by50 && i < 100 - unitsOf10) {
-            return "L" + "X".repeat(i / unitsOf10 - by50 / unitsOf10)
+        if (i > midPoint && i < 100 - units) {
+            return "L" + "$romanNumeralForUnits".repeat(i / units - midPoint / units)
         }
 
-        return "XC"
+        return "${romanNumeralForUnits}C"
     }
 
     private fun convertUnitsOf100(i: Int): String {
-        val unitsOf100 = 100
-        val by500 = 5 * unitsOf100
-        if (i == by500 - unitsOf100) {
-            return "CD"
+        val units = 100
+        val midPoint = 5 * units
+        val romanNumberalForUnits = "C"
+        if (i == midPoint - units) {
+            return "${romanNumberalForUnits}D"
         }
 
-        if (i < by500) {
-            return "C".repeat(i / unitsOf100)
+        if (i < midPoint) {
+            return "$romanNumberalForUnits".repeat(i / units)
         }
 
-        if (i > by500 && i < 1000 - unitsOf100) {
-            return "D" + "C".repeat(i / unitsOf100 - by500 / unitsOf100)
+        if (i > midPoint && i < 1000 - units) {
+            return "D" + "$romanNumberalForUnits".repeat(i / units - midPoint / units)
         }
 
-        return "CM"
+        return "${romanNumberalForUnits}M"
     }
 
     private fun convertUnitsOf1000(i: Int): String {
-        val unitsOf1000 = 1000
-        return "M".repeat(i / unitsOf1000)
+        val units = 1000
+        val romanNumeralForUnits = "M"
+        return romanNumeralForUnits.repeat(i / units)
     }
 
     private fun convertBaseSymbols(i: Int): String? {
