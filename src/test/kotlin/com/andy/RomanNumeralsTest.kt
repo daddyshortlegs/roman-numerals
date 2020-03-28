@@ -58,4 +58,9 @@ class RomanNumeralsTest {
         assertEquals("LXXX", romanNumerals.convert(80))
     }
 
+    @Test
+    fun `should convert ten less than 100`() {
+        assertEquals("XC", romanNumerals.convert(90))
+    }
+
 }
