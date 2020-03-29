@@ -16,21 +16,20 @@ class RomanNumerals {
     }
 
     private fun convertUnitsOf(units: Int, i: Int): String {
-        val midPoint = 5 * units
-        val romanNumeralForUnits = toRoman(units)
-        if (i == midPoint - units) {
-            return "${romanNumeralForUnits}${toRoman(midPoint)}"
+        val numeral = toRoman(i)
+        if (numeral != null) {
+            return numeral
         }
 
-        if (i < midPoint - 1) {
-            return "$romanNumeralForUnits".repeat(i / units)
+        if (i < 5 * units) {
+            return "${toRoman(units)}".repeat(i / units)
         }
 
-        if (i >= midPoint && i < (units * 10) - units) {
-            return toRoman(midPoint) + "$romanNumeralForUnits".repeat(i / units - midPoint / units)
+        if (i >= 5 * units && i < (units * 10) - units) {
+            return toRoman(5 * units) + "${toRoman(units)}".repeat(i / units - 5 * units / units)
         }
 
-        return "${romanNumeralForUnits}${toRoman(units * 10)}"
+        return "${toRoman(units)}${toRoman(units * 10)}"
     }
 
     private fun toRoman(i: Int): String? {
