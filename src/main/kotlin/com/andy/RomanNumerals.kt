@@ -1,7 +1,11 @@
 package com.andy
 
+import kotlin.math.floor
+
 class RomanNumerals {
-    fun convert(i: Int): String {
+    fun convert(value: Int): String {
+        var i = value
+        var romanNumber = ""
         if (i / 1000 in 1..9) {
             return convertUnitsOf(1000, i)
         }
@@ -11,14 +15,17 @@ class RomanNumerals {
         }
 
         if (i / 10 in 1..9) {
-            return convertUnitsOf(10, i)
+            romanNumber += convertUnitsOf(10, i)
+            val timesDivisibleBy10 = i / 10
+            val toSubtract = timesDivisibleBy10 * 10
+            i -= toSubtract
         }
 
         if (i / 1 in 1..9) {
-            return convertUnitsOf(1, i)
+            romanNumber += convertUnitsOf(1, i)
         }
 
-        return ""
+        return romanNumber
     }
 
     private fun convertUnitsOf(units: Int, i: Int): String {

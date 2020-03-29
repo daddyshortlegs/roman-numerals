@@ -63,7 +63,6 @@ class RomanNumeralsTest {
         assertEquals("XC", romanNumerals.convert(90))
     }
 
-
     @Test
     fun `should convert units of 100`() {
         assertEquals("C", romanNumerals.convert(100))
@@ -92,7 +91,13 @@ class RomanNumeralsTest {
     fun `should convert a few thoussand`() {
         assertEquals("M", romanNumerals.convert(1000))
         assertEquals("MM", romanNumerals.convert(2000))
+    }
+
+    @Test
+    fun `should build aggregate number`() {
+        assertEquals("XXIX", romanNumerals.convert(29))
 
     }
+
 
 }
