@@ -1,35 +1,28 @@
 package com.andy
 
-import kotlin.math.floor
-
 class RomanNumerals {
     fun convert(value: Int): String {
         var i = value
         var romanNumber = ""
+
         if (i / 1000 in 1..9) {
             romanNumber += convertUnitsOf(1000, i)
-            val timesDivisibleBy1000 = i / 1000
-            val toSubtract = timesDivisibleBy1000 * 1000
-            i -= toSubtract
-
+            i -= (i / 1000) * 1000
         }
 
         if (i / 100 in 1..9) {
             romanNumber += convertUnitsOf(100, i)
-            val timesDivisibleBy100 = i / 100
-            val toSubtract = timesDivisibleBy100 * 100
-            i -= toSubtract
+            i -= (i / 100) * 100
         }
 
         if (i / 10 in 1..9) {
             romanNumber += convertUnitsOf(10, i)
-            val timesDivisibleBy10 = i / 10
-            val toSubtract = timesDivisibleBy10 * 10
-            i -= toSubtract
+            i -= (i / 10) * 10
         }
 
         if (i / 1 in 1..9) {
             romanNumber += convertUnitsOf(1, i)
+            i -= (i / 1) * 1
         }
 
         return romanNumber
