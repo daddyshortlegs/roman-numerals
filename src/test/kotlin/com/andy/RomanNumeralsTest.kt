@@ -108,4 +108,11 @@ class RomanNumeralsTest {
     fun `should handle units of thousand and one hundred`() {
         assertEquals("MCC", romanNumerals.convert(1200))
     }
+
+    @Test
+    fun `should handle all sorts`() {
+        assertEquals("CCXCIV", romanNumerals.convert(294))
+        assertEquals("MMCLVI", romanNumerals.convert(2156))
+    }
+
 }
