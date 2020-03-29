@@ -4,25 +4,13 @@ class RomanNumerals {
     fun convert(value: Int): String {
         var i = value
         var romanNumber = ""
-
-        if (i / 1000 in 1..9) {
-            romanNumber += convertUnitsOf(1000, i)
-            i -= (i / 1000) * 1000
-        }
-
-        if (i / 100 in 1..9) {
-            romanNumber += convertUnitsOf(100, i)
-            i -= (i / 100) * 100
-        }
-
-        if (i / 10 in 1..9) {
-            romanNumber += convertUnitsOf(10, i)
-            i -= (i / 10) * 10
-        }
-
-        if (i / 1 in 1..9) {
-            romanNumber += convertUnitsOf(1, i)
-            i -= (i / 1) * 1
+        var divisor = 1000
+        while (divisor > 0) {
+            if (i / divisor in 1..9) {
+                romanNumber += convertUnitsOf(divisor, i)
+                i -= (i / divisor) * divisor
+            }
+            divisor /= 10
         }
 
         return romanNumber
