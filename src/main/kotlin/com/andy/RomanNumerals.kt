@@ -11,7 +11,10 @@ class RomanNumerals {
         }
 
         if (i / 100 in 1..9) {
-            return convertUnitsOf(100, i)
+            romanNumber += convertUnitsOf(100, i)
+            val timesDivisibleBy100 = i / 100
+            val toSubtract = timesDivisibleBy100 * 100
+            i -= toSubtract
         }
 
         if (i / 10 in 1..9) {

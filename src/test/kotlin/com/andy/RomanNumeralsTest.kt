@@ -94,10 +94,13 @@ class RomanNumeralsTest {
     }
 
     @Test
-    fun `should build aggregate number`() {
+    fun `should handle units of ten and one`() {
         assertEquals("XXIX", romanNumerals.convert(29))
-
     }
 
+    @Test
+    fun `should handle units of hundred and ten`() {
+        assertEquals("CXX", romanNumerals.convert(120))
+    }
 
 }
