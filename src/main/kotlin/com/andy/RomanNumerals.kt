@@ -7,7 +7,11 @@ class RomanNumerals {
         var i = value
         var romanNumber = ""
         if (i / 1000 in 1..9) {
-            return convertUnitsOf(1000, i)
+            romanNumber += convertUnitsOf(1000, i)
+            val timesDivisibleBy1000 = i / 1000
+            val toSubtract = timesDivisibleBy1000 * 1000
+            i -= toSubtract
+
         }
 
         if (i / 100 in 1..9) {

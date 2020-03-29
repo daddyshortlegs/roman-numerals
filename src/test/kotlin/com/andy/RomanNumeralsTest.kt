@@ -104,4 +104,8 @@ class RomanNumeralsTest {
         assertEquals("CCX", romanNumerals.convert(210))
     }
 
+    @Test
+    fun `should handle units of thousand and one hundred`() {
+        assertEquals("MCC", romanNumerals.convert(1200))
+    }
 }
