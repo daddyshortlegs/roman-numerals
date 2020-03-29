@@ -101,6 +101,7 @@ class RomanNumeralsTest {
     @Test
     fun `should handle units of hundred and ten`() {
         assertEquals("CXX", romanNumerals.convert(120))
+        assertEquals("CCX", romanNumerals.convert(210))
     }
 
 }
